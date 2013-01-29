@@ -1,23 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://gary34.github.com/blog/2013/01/29/hell-world/</loc>
+        <lastmod>2013-01-29T22:55:39+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://gary34.github.com/blog/archives/</loc>
-        <lastmod>2013-01-29T17:25:05+08:00</lastmod>
+        <lastmod>2013-01-29T22:55:39+08:00</lastmod>
     </url>
     <url>
         <loc>http://gary34.github.com/</loc>
-        <lastmod>2013-01-29T17:25:05+08:00</lastmod>
+        <lastmod>2013-01-29T22:55:39+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://gary34.github.com/resources/</loc>
+        <lastmod>2013-01-29T23:12:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://gary34.github.com/robots.txt</loc>
         <lastmod>2013-01-29T17:25:05+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://gary34.github.com/super-awesome/</loc>
-        <lastmod>2013-01-29T17:50:00+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://gary34.github.com/test/</loc>
-        <lastmod>2013-01-29T18:11:53+08:00</lastmod>
     </url>
 </urlset>

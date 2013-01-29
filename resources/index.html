@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>test - Damon34</title>
+  <title>resources - Damon34</title>
   <meta name="author" content="damon">
 
   
-  <meta name="description" content=" Test Jan 29th, 2013 Jan 29th, 2013 Tweet Recent Posts ">
+  <meta name="description" content="Resources Jan 29th, 2013 Jan 29th, 2013 Tweet About Me 写过java，ruby on rails,erlang...标准的服务员。小时候作文都不及格的长大了写代码的人。最喜欢点滴的成就感。梦想是全世界旅行。 Recent Posts &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://gary34.github.com/test/">
+  <link rel="canonical" href="http://gary34.github.com/resources/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -57,7 +57,7 @@
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/test">Archives</a></li>
+  <li><a href="/resources">Resources</a></li>
 </ul>
 
 </nav>
@@ -67,7 +67,7 @@
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Test</h1>
+    <h1 class="entry-title">Resources</h1>
     <p class="meta">
 
 
@@ -80,7 +80,7 @@
   
 
 
-<time datetime="2013-01-29T18:11:00+08:00" pubdate data-updated="true">Jan 29<span>th</span>, 2013</time></p>
+<time datetime="2013-01-29T23:12:00+08:00" pubdate data-updated="true">Jan 29<span>th</span>, 2013</time></p>
   </header>
   
   
@@ -101,13 +101,13 @@
   
 
 
-<time datetime="2013-01-29T18:11:00+08:00" pubdate data-updated="true">Jan 29<span>th</span>, 2013</time>
+<time datetime="2013-01-29T23:12:00+08:00" pubdate data-updated="true">Jan 29<span>th</span>, 2013</time>
         
       </p>
       
         <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://gary34.github.com/test/index.html" data-via="" data-counturl="http://gary34.github.com/test/index.html" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://gary34.github.com/resources/index.html" data-via="" data-counturl="http://gary34.github.com/resources/index.html" >Tweet</a>
   
   
   
@@ -123,10 +123,49 @@
 <aside class="sidebar">
   
     <section>
+  <h1>About Me</h1>
+  <p>
+    <img src="http://wenwen.soso.com/p/20090807/20090807140711-665524863.jpg">
+    写过java，ruby on rails,erlang...标准的服务员。小时候作文都不及格的长大了写代码的人。最喜欢点滴的成就感。梦想是全世界旅行。</p>
+</section>
+<section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
+      <li class="post">
+        <a href="/blog/2013/01/29/hell-world/">使用Octopress和github pages搭建自己的博客</a>
+      </li>
+    
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/gary34">@gary34</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'gary34',
+            count: 1,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
