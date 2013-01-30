@@ -1,0 +1,56 @@
+---
+layout: post
+title: "Lua 初探"
+date: 2013-01-30 20:41
+comments: true
+categories:
+---
+[Lua](http://baike.baidu.com/view/416116.htm) 一种嵌入式的脚本语言，多用于游戏开发中的动态更新。安装下载点[这里](http://www.lua.org/download.html)。
+先来一个hello world
+
+{% codeblock lang:lua %}
+print('hello world')
+{% endcodeblock %}
+very simple,那么来一段循环
+
+{% codeblock lang:lua %}
+for i in {1,2,3,4,5} do
+	print(i)
+end
+{% endcodeblock %}
+
+上面用到了lua中最强大的数据类型[table](http://www.lua.org/manual/5.2/manual.html#3.4.8),table可以构建链表、矩阵、队列、集合等数据结构。
+
+比如队列：
+
+{% codeblock lang:lua %}
+list = nil
+list = {_next = list, value = v}
+local head = list
+while head do
+  print(head.value)
+  head = head._next
+end
+{% endcodeblock %}
+集合：
+{% codeblock lang:lua %}
+function Set (list)
+  local set = {}
+  for _, l in ipairs(list) do set[l] = true end
+    return set
+  end
+set = Set({1,2,3,4,5,2,3})
+for el,_ in ipairs(set) do
+  print(el)
+end
+{% endcodeblock %}
+输出结果
+
+```
+1
+2
+3
+4
+5
+```
+#####从上面可以看出Lua不像其他语言有很多现成的函数，数据结构都需要自己写代码构建,这个是Lua作为嵌入式脚本语言的特性
