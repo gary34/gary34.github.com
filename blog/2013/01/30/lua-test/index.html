@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Damon34</title>
+  <title>Lua 初探 - Damon34</title>
   <meta name="author" content="damon">
 
   
@@ -24,7 +24,7 @@ end &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://gary34.github.com/">
+  <link rel="canonical" href="http://gary34.github.com/blog/2013/01/30/lua-test/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -69,15 +69,12 @@ end &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/01/30/lua-test/">Lua 初探</a></h1>
+      <h1 class="entry-title">Lua 初探</h1>
     
     
       <p class="meta">
@@ -100,7 +97,7 @@ end &hellip;">
   </header>
 
 
-  <div class="entry-content"><p><a href="http://baike.baidu.com/view/416116.htm">Lua</a> 一种嵌入式的脚本语言，多用于游戏开发中的动态更新。安装下载点<a href="http://www.lua.org/download.html">这里</a>。
+<div class="entry-content"><p><a href="http://baike.baidu.com/view/416116.htm">Lua</a> 一种嵌入式的脚本语言，多用于游戏开发中的动态更新。安装下载点<a href="http://www.lua.org/download.html">这里</a>。
 先来一个hello world</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -179,22 +176,16 @@ end &hellip;">
 
 <h5>从上面可以看出Lua不像其他语言有很多现成的函数，数据结构都需要自己写代码构建,这个是Lua作为嵌入式脚本语言的特性</h5>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/29/hell-world/">使用Octopress和github Pages搭建自己的博客</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">damon</span></span>
+
+      
 
 
 
@@ -206,65 +197,70 @@ end &hellip;">
   
 
 
-<time datetime="2013-01-29T21:53:00+08:00" pubdate data-updated="true">Jan 29<span>th</span>, 2013</time>
-        
-      </p>
+<time datetime="2013-01-30T20:41:00+08:00" pubdate data-updated="true">Jan 30<span>th</span>, 2013</time>
+      
+
+
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://gary34.github.com/blog/2013/01/30/lua-test/" data-via="" data-counturl="http://gary34.github.com/blog/2013/01/30/lua-test/" >Tweet</a>
+  
+  
+  
+  
+  
+<script type="text/javascript" charset="utf-8">
+(function(){
+  var _w = 90 , _h = 24;
+  var param = {
+    url:location.href,
+    type:'2',
+    count:'1', /**是否显示分享数，1显示(可选)*/
+    appkey:'', /**您申请的应用appkey,显示分享来源(可选)*/
+    title:'', /**分享的文字内容(可选，默认为所在页面的title)*/
+    pic:'', /**分享图片的路径(可选)*/
+    ralateUid:'1668475274', /**关联用户的UID，分享微博会@该用户(可选)*/
+  language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
+    rnd:new Date().valueOf()
+  }
+  var temp = [];
+  for( var p in param ){
+    temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+  }
+  document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+})()
+</script>
 
-
-  <div class="entry-content"><p>github是目前托管开源代码最流行的网站，不管你有没有发布过开源代码，但是如果你没有用过github说明你已经out了。github pages是github的一个服务，可以为你的账号或项目提供免费的网站服务。喜欢github pages的原因是因为pages支持markdown格式，markdown格式是我见过最好用的标签语言。找了很久都没能找到满意的支持代码的博客。github pages觉得是最合适的。简单，漂亮又功能多。 <a href="http://www.yangzhiping.com/tech/wordpress-to-jekyll.html">Jekyll</a> 是github pages的基础，<a href="http://octopress.org/">Octopress</a>是Jekyll的一个扩展。 废话太多，下面说下我是怎么配置的吧。</p>
-
-<p>github pages 帮助文档：<a href="https://help.github.com/categories/20/articles">https://help.github.com/categories/20/articles</a></p>
-
-<p>Octopress 帮助文档：<a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></p>
-
-<h2>创建项目主页</h2>
-
-<ol>
-<li>创建一个github项目，项目名字必须为username/username.github.com,比如我的用户名是gary34,项目名称必须为gary34/gary34.github.com
-具体怎么做就点<a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">这里</a></li>
-<li>在github设置上给你的项目加上你的pubkey，不知道什么是pubkey或是windows的就算了，这里不适合你们。</li>
-<li><a href="http://octopress.org/docs/setup/">安装Octopress</a>,大概的意思是先安装git ,然后clone Octopress代码，然后rake install 。Octopress 就装好了。</li>
-<li>进入<a href="http://octopress.org/docs/deploying/github/">下一步</a>,把Octopress部署到你的github上，</li>
-</ol>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages
-</span><span class='line'>rake generate
-</span><span class='line'>rake deploy
-</span><span class='line'>git add .
-</span><span class='line'>git commit -m 'your message'
-</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
-
-
-<p>10分钟之后访问你的pages主页，就可以看到主页已经变成Octopress了。</p>
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/29/hell-world/" title="Previous Post: 使用Octopress和github pages搭建自己的博客">&laquo; 使用Octopress和github pages搭建自己的博客</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
   <h1>About Me</h1>
   <p>
     <img src="http://wenwen.soso.com/p/20090807/20090807140711-665524863.jpg">
-    写过java，ruby on rails,erlang&#8230;标准的服务员。小时候作文都不及格的长大了写代码的人。最喜欢点滴的成就感。梦想是全世界旅行。</p>
+    写过java，ruby on rails,erlang...标准的服务员。小时候作文都不及格的长大了写代码的人。最喜欢点滴的成就感。梦想是全世界旅行。</p>
 </section>
 <section>
   <h1>Recent Posts</h1>
@@ -284,7 +280,7 @@ end &hellip;">
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/gary34">@gary34</a> on GitHub
@@ -318,6 +314,7 @@ end &hellip;">
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -332,7 +329,10 @@ end &hellip;">
       var disqus_shortname = 'true';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://gary34.github.com/blog/2013/01/30/lua-test/';
+        var disqus_url = 'http://gary34.github.com/blog/2013/01/30/lua-test/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

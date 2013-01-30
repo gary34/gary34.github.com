@@ -4,7 +4,7 @@
   <title><![CDATA[Damon34]]></title>
   <link href="http://gary34.github.com/atom.xml" rel="self"/>
   <link href="http://gary34.github.com/"/>
-  <updated>2013-01-30T17:52:18+08:00</updated>
+  <updated>2013-01-30T23:05:03+08:00</updated>
   <id>http://gary34.github.com/</id>
   <author>
     <name><![CDATA[damon]]></name>
@@ -12,6 +12,92 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Lua 初探]]></title>
+    <link href="http://gary34.github.com/blog/2013/01/30/lua-test/"/>
+    <updated>2013-01-30T20:41:00+08:00</updated>
+    <id>http://gary34.github.com/blog/2013/01/30/lua-test</id>
+    <content type="html"><![CDATA[<p><a href="http://baike.baidu.com/view/416116.htm">Lua</a> 一种嵌入式的脚本语言，多用于游戏开发中的动态更新。安装下载点<a href="http://www.lua.org/download.html">这里</a>。
+先来一个hello world</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='lua'><span class='line'><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">hello world&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>very simple,那么来一段循环</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='lua'><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span> <span class="k">do</span>
+</span><span class='line'>  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上面用到了lua中最强大的数据类型<a href="http://www.lua.org/manual/5.2/manual.html#3.4.8">table</a>,table可以构建链表、矩阵、队列、集合等数据结构。</p>
+
+<p>比如队列：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='lua'><span class='line'><span class="n">list</span> <span class="o">=</span> <span class="kc">nil</span>
+</span><span class='line'><span class="n">list</span> <span class="o">=</span> <span class="p">{</span><span class="n">_next</span> <span class="o">=</span> <span class="n">list</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">v</span><span class="p">}</span>
+</span><span class='line'><span class="kd">local</span> <span class="n">head</span> <span class="o">=</span> <span class="n">list</span>
+</span><span class='line'><span class="k">while</span> <span class="n">head</span> <span class="k">do</span>
+</span><span class='line'>  <span class="nb">print</span><span class="p">(</span><span class="n">head</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="n">_next</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>集合：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='lua'><span class='line'><span class="k">function</span> <span class="nf">Set</span> <span class="p">(</span><span class="n">list</span><span class="p">)</span>
+</span><span class='line'>  <span class="kd">local</span> <span class="n">set</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'>  <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">l</span> <span class="k">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="k">do</span> <span class="n">set</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span> <span class="k">end</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">set</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="n">set</span> <span class="o">=</span> <span class="n">Set</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">})</span>
+</span><span class='line'><span class="k">for</span> <span class="n">el</span><span class="p">,</span><span class="n">_</span> <span class="k">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">set</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="nb">print</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>输出结果</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>1
+</span><span class='line'>2
+</span><span class='line'>3
+</span><span class='line'>4
+</span><span class='line'>5</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>从上面可以看出Lua不像其他语言有很多现成的函数，数据结构都需要自己写代码构建,这个是Lua作为嵌入式脚本语言的特性</h5>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[使用Octopress和github pages搭建自己的博客]]></title>
