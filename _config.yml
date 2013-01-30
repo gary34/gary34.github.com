@@ -71,6 +71,9 @@ twitter_follow_button: true
 twitter_show_follower_count: false
 twitter_tweet_button: true
 
+sina_weibo: true
+sina_weibo_user: Damon34
+
 # Google +1
 google_plus_one: false
 google_plus_one_size: medium
@@ -89,8 +92,8 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
-disqus_show_comment_count: false
+disqus_short_name: true
+disqus_show_comment_count: 5
 
 # Google Analytics
 google_analytics_tracking_id:
