@@ -11,3 +11,4 @@ footer: true
 2. ##[Octopress Doc](http://octopress.org/docs/)
 3. ##[Fluentd 日志处理框架](http://fluentd.org/)
 4. ##[Mongo3 mongodb管理工具](https://github.com/derailed/mongo3)
+5. ##[Lua脚本语法说明(5.1)] (http://www.cnblogs.com/ly4cn/archive/2006/08/04/467550.html)
