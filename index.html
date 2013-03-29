@@ -9,7 +9,16 @@
   <meta name="author" content="damon">
 
   
-  <meta name="description" content="最近总觉得太累了，有太多的放不下。总有一些不大不小的事情能让我失去斗志，忽然发现其实我真的太脆弱。最近有条微博说，马云说的：男人的心是委屈撑大的。骑车去看我妈的路上我魂不守舍，因为今天上班的一些烦心事。人生十之八九都是烦心事，忽然觉得人之所以太难受是因为在乎的太多，所以要承担的太多。 &hellip;">
+  <meta name="description" content="纤程Fiber: 一个类似线程的协作任务，和线程不同的是纤程不能通过vm来调度，只能通过用户自己来调度。切换的代价很小。 [] (Fiber.rb) download 1
+2
+3
+4
+5
+6
+7
+8
+9
+## fibonacci 计算，a1 = a2 = 1 ;an=a(n-1)+a(n-2) &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +74,80 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/29/fiber/">Fiber</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-29T15:53:00+08:00" pubdate data-updated="true">Mar 29<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>纤程Fiber: 一个类似线程的协作任务，和线程不同的是纤程不能通过vm来调度，只能通过用户自己来调度。切换的代价很小。</p>
+
+<figure class='code'><figcaption><span>[] (Fiber.rb)</span> <a href='/code/Fiber.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">## fibonacci 计算，a1 = a2 = 1 ;an=a(n-1)+a(n-2)</span>
+</span><span class='line'><span class="n">fib</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+</span><span class='line'>  <span class="kp">loop</span> <span class="k">do</span>
+</span><span class='line'>    <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span> <span class="n">y</span> <span class="c1">## 返回 y 给 调用者</span>
+</span><span class='line'>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="c1">## Fiber.yield 调用后阻塞，在resume之后执行</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="mi">20</span><span class="o">.</span><span class="n">times</span> <span class="p">{</span> <span class="nb">puts</span> <span class="n">fib</span><span class="o">.</span><span class="n">resume</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>从上面代码可以看出线程可以保存自己的上下文，并且可以像线程一样脱离当前线程独立存在.
+当纤程里面的代码顺序执行执行完成之后纤程就终止了。
+代码中fib每被调用一次(resume)就执行一次loop,因为是死循环所以纤程fib可以一直被调用。</p>
+
+<p>协程Coroutines:
+Ruby中新的纤程是半协程<a href="http://en.wikipedia.org/wiki/Coroutine">（semi- coroutines）</a>。
+协程只是一个概念，其定义是“能挂起和唤醒的计算机程序子运行时”的计算机程序子运行时
+半协程是不对称（asymmetric）协程，在它们对控制权传递的选择上收到限制。不对称协程只能将控制权传递回它们的调用者，而对于协程来说，只要它们有相应的句柄，它们就可以自由地将控制传递给其它的任何一个纤程。
+wikipedia上说的很多都看不懂，我只看了协程在java和ruby中的实现，在java中主要和jvm有关系，一般的jvm都是用thread来实现的。Ruby则是纤程（那线程算不算&#8230;）。Lua就叫coroutine,只是底层实现各有不同。</p>
+
+<p>Links:</p>
+
+<p><a href="http://www.infoq.com/cn/news/2007/09/ruby-1-9-fibers">Ruby 1.9加入纤程实现轻量级并发</a></p>
+
+<p><a href="http://timyang.net/lua/lua-coroutine/">Lua coroutine 不一样的多线程编程思路</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -305,6 +388,10 @@
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/29/fiber/">Fiber</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/02/26/my-heart/">一点感悟</a>
