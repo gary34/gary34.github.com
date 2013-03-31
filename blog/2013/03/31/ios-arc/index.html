@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>一点感悟 - Damon34</title>
+  <title>Ios Arc - Damon34</title>
   <meta name="author" content="damon">
 
   
-  <meta name="description" content="最近总觉得太累了，有太多的放不下。总有一些不大不小的事情能让我失去斗志，忽然发现其实我真的太脆弱。最近有条微博说，马云说的：男人的心是委屈撑大的。骑车去看我妈的路上我魂不守舍，因为今天上班的一些烦心事。人生十之八九都是烦心事，忽然觉得人之所以太难受是因为在乎的太多，所以要承担的太多。 &hellip;">
+  <meta name="description" content="IOS ARC 首先介绍一下object-c的属性 Property能够自动设置属性的访问器 属性分三类 读写属性 (readwrite/readonly)
+setter属性 (assign/retain/copy),
+原子属性 （atomicity/nonatomic） 如果属性是对象类型， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://gary34.github.com/blog/2013/02/26/my-heart/">
+  <link rel="canonical" href="http://gary34.github.com/blog/2013/03/31/ios-arc/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -68,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">一点感悟</h1>
+      <h1 class="entry-title">Ios Arc</h1>
     
     
       <p class="meta">
@@ -84,20 +86,40 @@
   
 
 
-<time datetime="2013-02-26T22:50:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2013</time>
+<time datetime="2013-03-31T22:32:00+08:00" pubdate data-updated="true">Mar 31<span>st</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>最近总觉得太累了，有太多的放不下。总有一些不大不小的事情能让我失去斗志，忽然发现其实我真的太脆弱。最近有条微博说，马云说的：男人的心是委屈撑大的。骑车去看我妈的路上我魂不守舍，因为今天上班的一些烦心事。人生十之八九都是烦心事，忽然觉得人之所以太难受是因为在乎的太多，所以要承担的太多。所以当你觉得无法承受的时候不妨丢下手中的包袱。活着就是最大的幸福，没什么过不去的坎。</p>
+<div class="entry-content"><h2>IOS ARC</h2>
 
-<p>开心是一天，不开心也是一天，何不开心过一天呢。从今以后，我要自由自在的生活，无论发生什么活着就是最大的幸福，没什么过不去的坎。</p>
+<p>首先介绍一下object-c的属性</p>
 
-<p>开心是一天，不开心也是一天，何不开心过一天呢。从今以后，我要自由自在的生活，无论发生什么。</p>
+<p>Property能够自动设置属性的访问器</p>
 
-<p><img src="http://ww4.sinaimg.cn/mw690/54da4dbdjw1dz63fencr1j.jpg" width="500" height="600"></p>
+<p>属性分三类</p>
+
+<ol>
+<li>读写属性 (readwrite/readonly)</li>
+<li>setter属性  (assign/retain/copy),</li>
+<li>原子属性 （atomicity/nonatomic）</li>
+</ol>
+
+
+<p>  <code>如果属性是对象类型，你需要使用retain,assign,copy参数，表示setter方法内部实现的时候，持有对象的方式。其中retain就是增加引用计数，强引用类型。assign就是变量的直接赋值，弱引用类型，也是默认值。copy就是把setter的参数复制一遍，再赋给成员变量。 如果你不给出持有对象的方式，编译器就会给出警告。
+   原子属性中，atomic是默认值，表示属性是原子的，支持多线程并发访问（在setter实现中加入了同步锁），后者是非原子的，适合在非多线程环境中提升效率，没有加入同步锁</code></p>
+
+<p>   <code>在ios5.1中新引入的strong和retain类似是强引用，weak和assign类似是若引用.</code></p>
+
+<p>  links:</p>
+
+<ol>
+<li><a href="http://blog.csdn.net/newjerryj/article/details/6257538">属性的介绍与使用</a></li>
+<li><a href="http://blog.csdn.net/favormm/article/details/7023322"> iOS5 ARC学习笔记 </a></li>
+</ol>
+
 </div>
 
 
@@ -120,7 +142,7 @@
   
 
 
-<time datetime="2013-02-26T22:50:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2013</time>
+<time datetime="2013-03-31T22:32:00+08:00" pubdate data-updated="true">Mar 31<span>st</span>, 2013</time>
       
 
 
@@ -128,7 +150,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://gary34.github.com/blog/2013/02/26/my-heart/" data-via="" data-counturl="http://gary34.github.com/blog/2013/02/26/my-heart/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://gary34.github.com/blog/2013/03/31/ios-arc/" data-via="" data-counturl="http://gary34.github.com/blog/2013/03/31/ios-arc/" >Tweet</a>
   
   
   
@@ -162,10 +184,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/01/30/lua-test/" title="Previous Post: Lua 初探">&laquo; Lua 初探</a>
+        <a class="basic-alignment left" href="/blog/2013/03/29/fiber/" title="Previous Post: Fiber">&laquo; Fiber</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/03/29/fiber/" title="Next Post: Fiber">Fiber &raquo;</a>
       
     </p>
   </footer>
@@ -267,8 +287,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://gary34.github.com/blog/2013/02/26/my-heart/';
-        var disqus_url = 'http://gary34.github.com/blog/2013/02/26/my-heart/';
+        var disqus_identifier = 'http://gary34.github.com/blog/2013/03/31/ios-arc/';
+        var disqus_url = 'http://gary34.github.com/blog/2013/03/31/ios-arc/';
         var disqus_script = 'embed.js';
       
     (function () {

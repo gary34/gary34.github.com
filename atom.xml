@@ -4,7 +4,7 @@
   <title><![CDATA[Damon34]]></title>
   <link href="http://gary34.github.com/atom.xml" rel="self"/>
   <link href="http://gary34.github.com/"/>
-  <updated>2013-03-29T17:16:38+08:00</updated>
+  <updated>2013-03-31T22:50:59+08:00</updated>
   <id>http://gary34.github.com/</id>
   <author>
     <name><![CDATA[damon]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ios Arc]]></title>
+    <link href="http://gary34.github.com/blog/2013/03/31/ios-arc/"/>
+    <updated>2013-03-31T22:32:00+08:00</updated>
+    <id>http://gary34.github.com/blog/2013/03/31/ios-arc</id>
+    <content type="html"><![CDATA[<h2>IOS ARC</h2>
+
+<p>首先介绍一下object-c的属性</p>
+
+<p>Property能够自动设置属性的访问器</p>
+
+<p>属性分三类</p>
+
+<ol>
+<li>读写属性 (readwrite/readonly)</li>
+<li>setter属性  (assign/retain/copy),</li>
+<li>原子属性 （atomicity/nonatomic）</li>
+</ol>
+
+
+<p>  <code>如果属性是对象类型，你需要使用retain,assign,copy参数，表示setter方法内部实现的时候，持有对象的方式。其中retain就是增加引用计数，强引用类型。assign就是变量的直接赋值，弱引用类型，也是默认值。copy就是把setter的参数复制一遍，再赋给成员变量。 如果你不给出持有对象的方式，编译器就会给出警告。
+   原子属性中，atomic是默认值，表示属性是原子的，支持多线程并发访问（在setter实现中加入了同步锁），后者是非原子的，适合在非多线程环境中提升效率，没有加入同步锁</code></p>
+
+<p>   <code>在ios5.1中新引入的strong和retain类似是强引用，weak和assign类似是若引用.</code></p>
+
+<p>  links:</p>
+
+<ol>
+<li><a href="http://blog.csdn.net/newjerryj/article/details/6257538">属性的介绍与使用</a></li>
+<li><a href="http://blog.csdn.net/favormm/article/details/7023322"> iOS5 ARC学习笔记 </a></li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fiber]]></title>
@@ -50,7 +85,7 @@
 Ruby中新的纤程是半协程<a href="http://en.wikipedia.org/wiki/Coroutine">（semi- coroutines）</a>。
 协程只是一个概念，其定义是“能挂起和唤醒的计算机程序子运行时”的计算机程序子运行时
 半协程是不对称（asymmetric）协程，在它们对控制权传递的选择上收到限制。不对称协程只能将控制权传递回它们的调用者，而对于协程来说，只要它们有相应的句柄，它们就可以自由地将控制传递给其它的任何一个纤程。
-wikipedia上说的很多都看不懂，我只看了协程在java和ruby中的实现，在java中主要和jvm有关系，一般的jvm都是用thread来实现的。Ruby则是纤程（那线程算不算&#8230;）。Lua就叫coroutine,只是底层实现各有不同。</p>
+wikipedia上说的很多都看不懂，我只看了协程在java和ruby中的实现，在java中主要和jvm有关系，一般的jvm都是用thread来实现的。Ruby则是纤程（那线程算不算&#8230;）。Lua就也是thread,只是底层实现各有不同。</p>
 
 <p>Links:</p>
 
