@@ -1,0 +1,28 @@
+---
+layout: post
+date: 2013-03-31 22:32
+comments: true
+categories:
+---
+
+##IOS ARC
+首先介绍一下object-c的属性
+
+Property能够自动设置属性的访问器
+
+属性分三类
+
+
+ 1. 读写属性 (readwrite/readonly)
+ 2. setter属性  (assign/retain/copy),
+ 3. 原子属性 （atomicity/nonatomic） 
+
+  `如果属性是对象类型，你需要使用retain,assign,copy参数，表示setter方法内部实现的时候，持有对象的方式。其中retain就是增加引用计数，强引用类型。assign就是变量的直接赋值，弱引用类型，也是默认值。copy就是把setter的参数复制一遍，再赋给成员变量。 如果你不给出持有对象的方式，编译器就会给出警告。
+   原子属性中，atomic是默认值，表示属性是原子的，支持多线程并发访问（在setter实现中加入了同步锁），后者是非原子的，适合在非多线程环境中提升效率，没有加入同步锁`
+
+   `在ios5.1中新引入的strong和retain类似是强引用，weak和assign类似是若引用.`
+
+  links:
+
+  1. [属性的介绍与使用](http://blog.csdn.net/newjerryj/article/details/6257538)
+  2. [ iOS5 ARC学习笔记 ](http://blog.csdn.net/favormm/article/details/7023322)
