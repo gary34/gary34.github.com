@@ -96,7 +96,8 @@ disqus_short_name: true
 disqus_show_comment_count: 5
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id:UA-39769524-1
+
 
 # Facebook Like
 facebook_like: false
