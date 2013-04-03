@@ -9,10 +9,9 @@
   <meta name="author" content="Gary34">
 
   
-  <meta name="description" content="如果是UIViewController的子类就用
-`
-initWithNibName:bundle:
-Returns a newly initialized view controller with the nib file in the specified bundle. (id) &hellip;">
+  <meta name="description" content="IOS ARC 首先介绍一下object-c的属性 Property能够自动设置属性的访问器 属性分三类 读写属性 (readwrite/readonly)
+setter属性 (assign/retain/copy),
+原子属性 （atomicity/nonatomic） 如果属性是对象类型， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -33,17 +32,19 @@ Returns a newly initialized view controller with the nib file in the specified b
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-39769524-1']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39769524-1', 'github.com');
+  ga('send', 'pageview');
+
+</script>
+  }})
+
 
 
 </head>
@@ -80,53 +81,6 @@ Returns a newly initialized view controller with the nib file in the specified b
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/02/load-nib/">Object-c 加载nib文件</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-02T13:39:00+08:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>如果是UIViewController的子类就用
-`
-initWithNibName:bundle:
-Returns a newly initialized view controller with the nib file in the specified bundle.</p>
-
-<ul>
-<li>(id)initWithNibName:(NSString <em>)nibName bundle:(NSBundle </em>)nibBundle
-`</li>
-</ul>
-
-
-<p>如果是UIView如果是UIViewController的子类就用</p>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -505,10 +459,6 @@ wikipedia上说的很多都看不懂，我只看了协程在java和ruby中的实
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/04/02/load-nib/">Object-c 加载nib文件</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2013/03/31/ios-arc/">Ios Arc</a>
       </li>
     
@@ -522,6 +472,10 @@ wikipedia上说的很多都看不懂，我只看了协程在java和ruby中的实
     
       <li class="post">
         <a href="/blog/2013/01/30/lua-test/">Lua 初探</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/29/hell-world/">使用Octopress和github pages搭建自己的博客</a>
       </li>
     
   </ul>
