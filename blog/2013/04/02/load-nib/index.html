@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>使用Octopress和github pages搭建自己的博客 - Gary34</title>
+  <title>Object-c 加载nib文件 - Gary34</title>
   <meta name="author" content="Gary34">
 
   
-  <meta name="description" content="github是目前托管开源代码最流行的网站，不管你有没有发布过开源代码，但是如果你没有用过github说明你已经out了。github pages是github的一个服务，可以为你的账号或项目提供免费的网站服务。喜欢github pages的原因是因为pages支持markdown格式， &hellip;">
+  <meta name="description" content="如果是UIViewController的子类就用
+`
+initWithNibName:bundle:
+Returns a newly initialized view controller with the nib file in the specified bundle. (id) &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://gary34.github.com/blog/2013/01/29/hell-world/">
+  <link rel="canonical" href="http://gary34.github.com/blog/2013/04/02/load-nib/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -80,7 +83,7 @@
   
   <header>
     
-      <h1 class="entry-title">使用Octopress和github Pages搭建自己的博客</h1>
+      <h1 class="entry-title">Object-c 加载nib文件</h1>
     
     
       <p class="meta">
@@ -96,45 +99,25 @@
   
 
 
-<time datetime="2013-01-29T21:53:00+08:00" pubdate data-updated="true">Jan 29<span>th</span>, 2013</time>
+<time datetime="2013-04-02T13:39:00+08:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>github是目前托管开源代码最流行的网站，不管你有没有发布过开源代码，但是如果你没有用过github说明你已经out了。github pages是github的一个服务，可以为你的账号或项目提供免费的网站服务。喜欢github pages的原因是因为pages支持markdown格式，markdown格式是我见过最好用的标签语言。找了很久都没能找到满意的支持代码的博客。github pages觉得是最合适的。简单，漂亮又功能多。 <a href="http://www.yangzhiping.com/tech/wordpress-to-jekyll.html">Jekyll</a> 是github pages的基础，<a href="http://octopress.org/">Octopress</a>是Jekyll的一个扩展。 废话太多，下面说下我是怎么配置的吧。</p>
+<div class="entry-content"><p>如果是UIViewController的子类就用
+`
+initWithNibName:bundle:
+Returns a newly initialized view controller with the nib file in the specified bundle.</p>
 
-<p>github pages 帮助文档：<a href="https://help.github.com/categories/20/articles">https://help.github.com/categories/20/articles</a></p>
-
-<p>Octopress 帮助文档：<a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></p>
-
-<h2>创建项目主页</h2>
-
-<ol>
-<li>创建一个github项目，项目名字必须为username/username.github.com,比如我的用户名是gary34,项目名称必须为gary34/gary34.github.com
-具体怎么做就点<a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">这里</a></li>
-<li>在github设置上给你的项目加上你的pubkey，不知道什么是pubkey或是windows的就算了，这里不适合你们。</li>
-<li><a href="http://octopress.org/docs/setup/">安装Octopress</a>,大概的意思是先安装git ,然后clone Octopress代码，然后rake install 。Octopress 就装好了。</li>
-<li>进入<a href="http://octopress.org/docs/deploying/github/">下一步</a>,把Octopress部署到你的github上，</li>
-</ol>
+<ul>
+<li>(id)initWithNibName:(NSString <em>)nibName bundle:(NSBundle </em>)nibBundle
+`</li>
+</ul>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages
-</span><span class='line'>rake generate
-</span><span class='line'>rake deploy
-</span><span class='line'>git add .
-</span><span class='line'>git commit -m 'your message'
-</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
-
-
-<p>10分钟之后访问你的pages主页，就可以看到主页已经变成Octopress了。</p>
+<p>如果是UIView如果是UIViewController的子类就用</p>
 </div>
 
 
@@ -157,7 +140,7 @@
   
 
 
-<time datetime="2013-01-29T21:53:00+08:00" pubdate data-updated="true">Jan 29<span>th</span>, 2013</time>
+<time datetime="2013-04-02T13:39:00+08:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2013</time>
       
 
 
@@ -165,7 +148,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://gary34.github.com/blog/2013/01/29/hell-world/" data-via="" data-counturl="http://gary34.github.com/blog/2013/01/29/hell-world/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://gary34.github.com/blog/2013/04/02/load-nib/" data-via="" data-counturl="http://gary34.github.com/blog/2013/04/02/load-nib/" >Tweet</a>
   
   
   
@@ -199,8 +182,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/03/31/ios-arc/" title="Previous Post: Ios Arc">&laquo; Ios Arc</a>
       
-        <a class="basic-alignment right" href="/blog/2013/01/30/lua-test/" title="Next Post: Lua 初探">Lua 初探 &raquo;</a>
       
     </p>
   </footer>
@@ -302,8 +285,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://gary34.github.com/blog/2013/01/29/hell-world/';
-        var disqus_url = 'http://gary34.github.com/blog/2013/01/29/hell-world/';
+        var disqus_identifier = 'http://gary34.github.com/blog/2013/04/02/load-nib/';
+        var disqus_url = 'http://gary34.github.com/blog/2013/04/02/load-nib/';
         var disqus_script = 'embed.js';
       
     (function () {

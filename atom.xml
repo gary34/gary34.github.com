@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Damon34]]></title>
+  <title><![CDATA[Gary34]]></title>
   <link href="http://gary34.github.com/atom.xml" rel="self"/>
   <link href="http://gary34.github.com/"/>
-  <updated>2013-03-31T22:50:59+08:00</updated>
+  <updated>2013-04-03T10:42:16+08:00</updated>
   <id>http://gary34.github.com/</id>
   <author>
-    <name><![CDATA[damon]]></name>
+    <name><![CDATA[Gary34]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Object-c 加载nib文件]]></title>
+    <link href="http://gary34.github.com/blog/2013/04/02/load-nib/"/>
+    <updated>2013-04-02T13:39:00+08:00</updated>
+    <id>http://gary34.github.com/blog/2013/04/02/load-nib</id>
+    <content type="html"><![CDATA[<p>如果是UIViewController的子类就用
+`
+initWithNibName:bundle:
+Returns a newly initialized view controller with the nib file in the specified bundle.</p>
+
+<ul>
+<li>(id)initWithNibName:(NSString <em>)nibName bundle:(NSBundle </em>)nibBundle
+`</li>
+</ul>
+
+
+<p>如果是UIView如果是UIViewController的子类就用</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ios Arc]]></title>
